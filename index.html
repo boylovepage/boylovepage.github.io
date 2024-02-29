@@ -50,7 +50,7 @@
                     data: {},
                     success: function (data) {
                         console.log(data[0]);
-                        var html1 = '';
+                        var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
                         for (var i = 0; i < data.length; i++) {
                             html1 += '<a class="btn" href="' + data[i].adopt_link + '" target="_blank">' + data[i].adopt_name + '</a>';
                         }

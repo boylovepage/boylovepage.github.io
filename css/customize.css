@@ -88,21 +88,21 @@ a{
     width:80%;
     margin-bottom:46px
 }
-.download_content{
+.download_content, .download_content1{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
     margin:30px 0 20px;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-.download_content .btn{
+.download_content .btn, .download_content1 .btn{
     width:100%;
     max-width:170px;
     height:45px;
     line-height:45px;
     text-align:center;
-    margin:7.5px 0px;
+    margin:7.5px;
     padding: 0 10px;
     border:2px outset #92bfe6;
     border-radius:6px;
@@ -112,7 +112,7 @@ a{
     cursor:pointer;
     position:relative
 }
-.download_content .btn:hover{
+.download_content .btn:hover, .download_content1 .btn:hover{
     background:#334455;
     color:#fff
 }
