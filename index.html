@@ -29,15 +29,9 @@
                     <img class="logo_img" src="img/logo.svg" alt="logo">
                     <h2>为避免走失，Ctrl+D 即可收藏地址！</h2>
                     <div class="download_content">
-                        <!-- <a class="btn" href="go/301.html" target="_blank"> ∞ 中国线路 1 ∞ </a>
-                        <a class="btn" href="go/302.html" target="_blank"> ∞ 中国线路 2 ∞ </a>
-                        <a class="btn" href="go/307.html" target="_blank"> ∞ 海外推广 ∞ </a>
-                        <a class="btn" style="background-color: #fff;color:#334455;" href="go/adopt.html" target="_blank"> ∞ 友链自助收录 ∞ </a> -->
+                        
                     </div>
-                    <div class="social_tag_wrap">
-                        <a href="" class="social_link">官方社群</a>
-                        <a href="" class="social_link">廣告查詢</a>
-                    </div>
+         
                     <div>
                         <p>邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
                     </div>
@@ -50,26 +44,18 @@
             inputGitLink();
             function inputGitLink(  ) {
                 $.ajax({
-                    url: 'https://xxmap.world/adoptLink',
+                    url: 'https://boylove.cc/home/adopt/getadopt',
                     type: 'get',
                     dataType: "json",
                     data: {},
                     success: function (data) {
-                        console.log(data.secret1[0]);
-                        //data.secret1是給連結的(btn)要加入HTML的內容到.download_content
+                        console.log(data[0]);
                         var html1 = '';
-                        for (var i = 0; i < data.secret1.length; i++) {
-                            html1 += '<a class="btn" href="' + data.secret1[i].goLink + '" target="_blank">' + data.secret1[i].title + '</a>';
+                        for (var i = 0; i < data.length; i++) {
+                            html1 += '<a class="btn" href="' + data[i].adopt_link + '" target="_blank">' + data[i].adopt_name + '</a>';
                         }
-                        for (var i = 0; i < data.secret3.length; i++) {
-                            html1 += '<a class="btn" style="background-color: #fff;color:#334455;" href="' + data.secret3[i].goLink + '" target="_blank">' + data.secret3[i].title + '</a>';
-                        }
+                        
                         $('.download_content').html(html1);
-
-                        var html2 = '';
-                        html2 += '<a href="' + data.secret4[0].goLink + '" class="social_link">' + data.secret4[0].title + '</a>';
-                        html2 += '<a href="' + data.secret5[0].goLink + '" class="social_link">' + data.secret5[0].title + '</a>';                   
-                        $('.social_tag_wrap').html(html2);
 
                     }
                 });
