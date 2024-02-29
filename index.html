@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>香香腐宅BoyLove│耽美漫畫-最新最全的BL腐漫網入口</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/star.css">
+<link rel="stylesheet" href="./css/customize.css">
+<script src="js/jquery.min.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159226588-4"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-159226588-4');
+</script>
+</head>
+    <body ondragstart="return false">
+        <div class="container c1">
+            <div class="content">
+                <div class="right">
+                    <img class="logo_img" src="img/logo.svg" alt="logo">
+                    <h2>为避免走失，Ctrl+D 即可收藏地址！</h2>
+                    <div class="download_content">
+                        <!-- <a class="btn" href="go/301.html" target="_blank"> ∞ 中国线路 1 ∞ </a>
+                        <a class="btn" href="go/302.html" target="_blank"> ∞ 中国线路 2 ∞ </a>
+                        <a class="btn" href="go/307.html" target="_blank"> ∞ 海外推广 ∞ </a>
+                        <a class="btn" style="background-color: #fff;color:#334455;" href="go/adopt.html" target="_blank"> ∞ 友链自助收录 ∞ </a> -->
+                    </div>
+                    <div class="social_tag_wrap">
+                        <a href="" class="social_link">官方社群</a>
+                        <a href="" class="social_link">廣告查詢</a>
+                    </div>
+                    <div>
+                        <p>邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="sky"></div>
+        </div>
+
+        <script>
+            inputGitLink();
+            function inputGitLink(  ) {
+                $.ajax({
+                    url: 'https://xxmap.world/adoptLink',
+                    type: 'get',
+                    dataType: "json",
+                    data: {},
+                    success: function (data) {
+                        console.log(data.secret1[0]);
+                        //data.secret1是給連結的(btn)要加入HTML的內容到.download_content
+                        var html1 = '';
+                        for (var i = 0; i < data.secret1.length; i++) {
+                            html1 += '<a class="btn" href="' + data.secret1[i].goLink + '" target="_blank">' + data.secret1[i].title + '</a>';
+                        }
+                        for (var i = 0; i < data.secret3.length; i++) {
+                            html1 += '<a class="btn" style="background-color: #fff;color:#334455;" href="' + data.secret3[i].goLink + '" target="_blank">' + data.secret3[i].title + '</a>';
+                        }
+                        $('.download_content').html(html1);
+
+                        var html2 = '';
+                        html2 += '<a href="' + data.secret4[0].goLink + '" class="social_link">' + data.secret4[0].title + '</a>';
+                        html2 += '<a href="' + data.secret5[0].goLink + '" class="social_link">' + data.secret5[0].title + '</a>';                   
+                        $('.social_tag_wrap').html(html2);
+
+                    }
+                });
+            }
+        </script>
+
+        
+        <script src="js/star.js"></script>
+        <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_telegram"></a>
+            <a class="a2a_button_sina_weibo"></a>
+            <a class="a2a_button_wechat"></a>
+            <a class="a2a_button_copy_link"></a>
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+    </body>
+</html>
