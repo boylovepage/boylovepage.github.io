@@ -26,8 +26,8 @@ a{
     overflow:hidden
 }
 .c1{
-    background-image:linear-gradient(1deg,#92bfe6,#334455 51%,#334455);
-    color:#fff;
+    background-image:linear-gradient(325deg,#3c689f,#a7aeb9 51%,#e3e1d0);
+    color:#275a6d;
     min-height:61rem;
 }
 .content{
@@ -107,7 +107,7 @@ a{
     border:2px outset #92bfe6;
     border-radius:6px;
     background:rgba(255,255,255,.3);
-    color:#fff;
+    color:#275a6d;
     font-size:.9375em;
     cursor:pointer;
     position:relative
