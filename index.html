@@ -46,25 +46,41 @@
         </div>
 
         <script>
-            inputGitLink();
+            fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const country = data.country;
+                if (country === 'CN') {
+                    inputGitLink();
+                } else {
+                    inputGitLink2();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
             function inputGitLink(  ) {
-
-                fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const country = data.country;
-                    if (country === 'CN') {
-                        var place = 'https://boylove3.net/home/adopt/getadopt';
-                    } else {
-                        var place = 'https://boylove.cc/home/adopt/getadopt';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-
                 $.ajax({                    
-                    url: place,
+                    url: 'https://boylove3.net/home/adopt/getadopt',
+                    type: 'get',
+                    dataType: "json",
+                    data: {},
+                    success: function (data) {
+                        console.log(data[0]);
+                        var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
+                        for (var i = 0; i < data.length; i++) {
+                            html1 += '<a class="btn" href="' + data[i].adopt_link + '" target="_blank">' + data[i].adopt_name + '</a>';
+                        }
+                        
+                        $('.download_content').html(html1);
+
+                    }
+                });
+            }
+            function inputGitLink2(  ) {
+                $.ajax({                    
+                    url: 'https://boylove.cc/home/adopt/getadopt',
                     type: 'get',
                     dataType: "json",
                     data: {},
