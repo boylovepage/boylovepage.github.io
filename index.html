@@ -35,7 +35,7 @@
                     </div>
          
                     <div>
-						<p>沒有畫面或是聯結有問題請聯繫我們</p>
+						<p>沒有畫面或是鏈接有問題請聯繫我們</p>
                         <p>邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
 						<p><a href="https://discord.gg/qin-se-zai-yu-zuo-xiang-lan-rao-yu-fu-cheng-1107848885302476881">DC群</a></p>
 						<p><a href="https://t.me/fuhouseclub">TG群</a></p>
@@ -48,8 +48,23 @@
         <script>
             inputGitLink();
             function inputGitLink(  ) {
-                $.ajax({
-                    url: 'https://boylove3.net/home/adopt/getadopt',
+
+                fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const country = data.country;
+                    if (country === 'CN') {
+                        var place = 'https://boylove3.net/home/adopt/getadopt';
+                    } else {
+                        var place = 'https://boylove.cc/home/adopt/getadopt';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                $.ajax({                    
+                    url: place,
                     type: 'get',
                     dataType: "json",
                     data: {},
