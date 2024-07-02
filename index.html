@@ -35,8 +35,7 @@
                     </div>
          
                     <div>
-						<p>沒有畫面或是鏈接有問題請聯繫我們</p>
-                        <p>邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
+						<p>沒有畫面或鏈接<span onclick="showLostImg()">請點我</span>或是聯繫邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
 						<p><a href="https://discord.gg/qin-se-zai-yu-zuo-xiang-lan-rao-yu-fu-cheng-1107848885302476881">DC群</a></p>
 						<p><a href="https://t.me/fuhouseclub">TG群</a></p>
                     </div>
@@ -96,6 +95,14 @@
                     }
                 });
             }
+			
+			function showLostImg(){
+				Swal.fire({
+				  imageUrl: "img/lost.jpg",
+				  imageHeight: 500,
+				  imageAlt: "防走失"
+				});
+			}
         </script>
 
         
