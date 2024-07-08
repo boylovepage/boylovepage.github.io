@@ -32,7 +32,7 @@
 					<h1>FUHOUSE</h1>
                     <h2>为避免走失，Ctrl+D 即可收藏地址！</h2>
                     <div class="download_content">
-                        
+                        <a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>
                     </div>
          
                     <div>
@@ -67,10 +67,10 @@
                     dataType: "json",
                     data: {},
                     success: function (data) {
-                        console.log(data[0]);
+                        console.log(data['adoptList'][0]);
                         var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
-                        for (var i = 0; i < data.length; i++) {
-                            html1 += '<a class="btn" href="' + data[i].adopt_link + '" target="_blank">' + data[i].adopt_name + '</a>';
+                        for (var i = 0; i < data['adoptList'].length; i++) {
+                            html1 += '<a class="btn" href="' + data['adoptList'][i].adopt_link + '" target="_blank">' + data['adoptList'][i].adopt_name + '</a>';
                         }
                         
                         $('.download_content').html(html1);
@@ -85,10 +85,10 @@
                     dataType: "json",
                     data: {},
                     success: function (data) {
-                        console.log(data[0]);
+                        console.log(data['adoptList'][0]);
                         var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
-                        for (var i = 0; i < data.length; i++) {
-                            html1 += '<a class="btn" href="' + data[i].adopt_link + '" target="_blank">' + data[i].adopt_name + '</a>';
+                        for (var i = 0; i < data['adoptList'].length; i++) {
+                            html1 += '<a class="btn" href="' + data['adoptList'][i].adopt_link + '" target="_blank">' + data['adoptList'][i].adopt_name + '</a>';
                         }
                         
                         $('.download_content').html(html1);
