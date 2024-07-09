@@ -164,3 +164,9 @@ p{
         height:69rem;
     }
 }
+.swal2-html-container p{
+    font-size: 24px!important;
+}
+.swal2-html-container p a{
+    font-size: 24px!important;
+}

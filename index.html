@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/star.css">
 <link rel="stylesheet" href="./css/customize.css">
+<script src="js/adopt.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/sweetalert2.min.js"></script>
 <!-- Google tag (gtag.js) -->
@@ -19,7 +20,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-159226588-4');
 </script>
 </head>
@@ -33,14 +33,15 @@
                     <h2>为避免走失，Ctrl+D 即可收藏地址！</h2>
                     <div class="download_content">
                         <a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>
-                    </div>
-         
+                    </div>         
                     <div>
 						<p>沒有畫面或鏈接<span onclick="showLostImg()">請點我</span>或是聯繫邮箱：<a href="mailto:boylove.cc@gmail.com">boylove.cc@gmail.com</a></p>
-						<p><a href="https://discord.gg/qin-se-zai-yu-zuo-xiang-lan-rao-yu-fu-cheng-1107848885302476881">DC群</a></p>
-						<p><a href="https://t.me/fuhouseclub">TG群</a></p>
+						<p>微博🔎<a href="https://weibo.com/u/7926094443" target="_blank">腐宅小管家</p>
+						<p><a href="https://discord.gg/qin-se-zai-yu-zuo-xiang-lan-rao-yu-fu-cheng-1107848885302476881" target="_blank">DC群</a></p>
+						<p><a href="https://t.me/fuhouseclub" target="_blank">TG群</a></p>
                     </div>
                 </div>
+				<input type="hidden" class="adoptPage" value="img/lost.jpg">
             </div>
             <div class="sky"></div>
         </div>
@@ -59,49 +60,12 @@
             .catch(error => {
                 console.error('Error:', error);
             });
-
-            function inputGitLink(  ) {
-                $.ajax({                    
-                    url: 'https://fuzaii.cc/home/adopt/getadopt',
-                    type: 'get',
-                    dataType: "json",
-                    data: {},
-                    success: function (data) {
-                        console.log(data['adoptList'][0]);
-                        var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
-                        for (var i = 0; i < data['adoptList'].length; i++) {
-                            html1 += '<a class="btn" href="' + data['adoptList'][i].adopt_link + '" target="_blank">' + data['adoptList'][i].adopt_name + '</a>';
-                        }
-                        
-                        $('.download_content').html(html1);
-
-                    }
-                });
-            }
-            function inputGitLink2(  ) {
-                $.ajax({                    
-                    url: 'https://boylove.cc/home/adopt/getadopt',
-                    type: 'get',
-                    dataType: "json",
-                    data: {},
-                    success: function (data) {
-                        console.log(data['adoptList'][0]);
-                        var html1 = '<a class="btn" href="https://fuhouse.club/bl" target="_blank">永久网域</a>';
-                        for (var i = 0; i < data['adoptList'].length; i++) {
-                            html1 += '<a class="btn" href="' + data['adoptList'][i].adopt_link + '" target="_blank">' + data['adoptList'][i].adopt_name + '</a>';
-                        }
-                        
-                        $('.download_content').html(html1);
-
-                    }
-                });
-            }
-			
+            			
 			function showLostImg(){
+                var $adoptValue = $('.adoptPage').val();
 				Swal.fire({
-				  imageUrl: "img/lost.jpg",
-				  imageHeight: 500,
-				  imageAlt: "防走失"
+				  html: $adoptValue,
+                  showCloseButton: true,
 				});
 			}
         </script>
