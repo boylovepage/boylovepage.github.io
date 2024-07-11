@@ -23,8 +23,9 @@
   gtag('config', 'UA-159226588-4');
 </script>
 </head>
-    <body ondragstart="return false">
-        <div class="container c1">
+	<div class="stars"></div>  
+    <body ondragstart="return false" class="table">
+        <div class="container">
             <div class="content">
                 <div class="right">
                     <img class="logo_img" src="img/logo.svg" alt="logo">
@@ -68,19 +69,28 @@
                   showCloseButton: true,
 				});
 			}
-        </script>
-
         
-        <script src="js/star.js"></script>
-        <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
-            <a class="a2a_button_facebook"></a>
-            <a class="a2a_button_twitter"></a>
-            <a class="a2a_button_telegram"></a>
-            <a class="a2a_button_sina_weibo"></a>
-            <a class="a2a_button_wechat"></a>
-            <a class="a2a_button_copy_link"></a>
-            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-        </div>
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
+			$(document).ready(function(){
+			  var stars=800;  /*星星的密集程度，数字越大越多*/
+			  var $stars=$(".stars");
+			  var r=800;   /*星星的看起来的距离,值越大越远,可自行调制到自己满意的样子*/
+			  for(var i=0;i<stars;i++){
+				var $star=$("<div/>").addClass("star");
+				$stars.append($star);
+			  }
+			  $(".star").each(function(){
+				var cur=$(this);
+				var s=0.2+(Math.random()*1);
+				var curR=r+(Math.random()*300);
+				cur.css({ 
+				  transformOrigin:"0 0 "+curR+"px",
+				  transform:" translate3d(0,0,-"+curR+"px) rotateY("+(Math.random()*360)+"deg) rotateX("+(Math.random()*-50)+"deg) scale("+s+","+s+")"
+				   
+				})
+			  })
+			})
+		</script>
+
+
     </body>
 </html>
