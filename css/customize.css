@@ -209,3 +209,11 @@ body {
   backface-visibility: hidden;
 }
 
+@media (max-width:640px){
+    .star{
+        display:none;
+    }
+	body{
+		overflow:auto
+	}
+}
