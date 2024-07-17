@@ -46,7 +46,6 @@
             </div>
             <div class="sky"></div>
         </div>
-
         <script>
             fetch('https://ipapi.co/json/')
             .then(response => response.json())
@@ -63,9 +62,13 @@
             });
             			
 			function showLostImg(){
+				
                 var $adoptValue = $('.adoptPage').val();
+				if($adoptValue ==  "img/lost.jpg"){
+					$adoptValue = "<img style='width:100%' src="+$adoptValue+">";
+				}
 				Swal.fire({
-				  html: "<img style='width:100%' src="+$adoptValue+">",
+				  html: $adoptValue,
                   showCloseButton: true,
 				});
 			}
